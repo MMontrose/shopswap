@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopSwap</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body, html { margin:0; padding:0; height:100%; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background:#000; color:#fff; }
+
+    /* Full-screen hero with dark overlay */
+    .hero {
+      min-height: 70vh;
+      background: url('/images/hero.jpg') center/cover no-repeat; /* ← your main big image */
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.55); /* dark overlay – add vignette to image if you want stronger */
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+      max-width: 90%;
+    }
+    .hero h1 { font-size: 4.8rem; margin: 0 0 1rem; text-shadow: 0 4px 15px rgba(0,0,0,0.8); }
+    .hero p   { font-size: 2rem; margin: 0 0 2.5rem; text-shadow: 0 3px 10px rgba(0,0,0,0.8); }
+
+    /* Email form – beautiful & functional */
+    .email-form {
+      display: flex;
+      max-width: 520px;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      border-radius: 50px;
+      overflow: hidden;
+    }
+    .email-form input[type="email"] {
+      flex: 1;
+      padding: 1.4rem 2rem;
+      font-size: 1.3rem;
+      border: none;
+      outline: none;
+    }
+    .email-form button {
+      padding: 0 3rem;
+      background: #ff6b00;
+      color: white;
+      font-size: 1.4rem;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    .email-form button:hover { background: #e55a00; }
+
+    /* Bottom section – three images side-by-side */
+    .lower {
+      padding: 4rem 2rem;
+      background: #111;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem;
+    }
+    .card {
+      flex: 1;
+      min-width: 280px;
+      max-width: 360px;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .card p {
+      margin-top: 1.2rem;
+      font-size: 1.15rem;
+      color: #ddd;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 3rem; }
+      .hero p   { font-size: 1.5rem; }
+      .email-form { flex-direction: column; border-radius: 50px; }
+      .email-form input { border-radius: 50px 50px 0 0; }
+      .email-form button { border-radius: 0 0 50px 50px; padding: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Don't replicate your neighbor's shop, coordinate, collaborate, and create</h1>
+      <p>Coordinate tool borrowing, shop access, job swapping, and bring your unique skills and shop into the community</p>
+
+      <!-- Email capture – emails go straight to your inbox -->
+      <form class="email-form" action="https://formsubmit.co/welcome@shopswap.app" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit">Join the List</button>
+        <input type="hidden" name="_subject" value="New ShopSwap signup!">
+        <input type="hidden" name="_captcha" value="false">
+      </form>
+    </div>
+  </section>
+
+  <!-- BOTTOM THREE IMAGES -->
+  <section class="lower">
+    <div class="card">
+      <img src="/images/laser.jpg" alt="Feature 1">
+      <p>Coordinate</p>
+    </div>
+    <div class="card">
+      <img src="/images/turning.jpg" alt="Feature 2">
+      <p>Create</p>
+    </div>
+    <div class="card">
+      <img src="/images/welding.jpg" alt="Feature 3">
+      <p>Collaborate</p>
+    </div>
+  </section>
+
+</body>
+</html>
